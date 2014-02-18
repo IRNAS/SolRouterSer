@@ -29,7 +29,7 @@ To flash firmware on WR741ND/740N with scripts in this repository follow these s
 ### Electronics
 The circuit board uses spring loaded test pins to connect to the router. There are LEDs on the serial connections, indicating when the data is being transferred. Unpopulated pads may be used to add pull-up resistors if so required by the USB-UART adapter or the router. 
 
-Email us to preorder the assembled PCB with pre-soldered test pins. 
+Email us at (info AT irnas.eu) to preorder the assembled PCB with pre-soldered test pins. 
 
 ![SolRouterSer](https://raw.github.com/IRNAS/SolRouterSer/master/photos/SolRouterSer-1.jpg)
 
