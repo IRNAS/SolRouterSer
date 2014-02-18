@@ -2,7 +2,7 @@ Solderless router serial port connector
 ============
 Solderless router serial port connector is designed to enable easy connection to the routers serial port, bypassing the need for soldering headers or wires. This being particularly useful in community wireless networks with the large volume of low-cost wifi routers that may require a serial connection for restoring firmware if something has gone wrong.
 
-![SolRouterSer][https://raw.github.com/IRNAS/SolRouterSer/raw/master/photos/SolRouterSer-2.jpg]
+![SolRouterSer](https://raw.github.com/IRNAS/SolRouterSer/raw/master/photos/SolRouterSer-2.jpg)
  
 
 
@@ -24,14 +24,14 @@ To flash firmware on WR741ND/740N with scripts in this repository follow these s
  * Run the script with two arguments, first being the firmware filename in the TFTP folder and second being the UART device, for example `expect flash-wr741nd-v2.expect firmware.bin /dev/tty.SLAB_USBtoUART`
  * Wait and its done.
  
- ![SolRouterSer][https://raw.github.com/IRNAS/SolRouterSer/raw/master/photos/SolRouterSer-3.jpg]
+ ![SolRouterSer](https://raw.github.com/IRNAS/SolRouterSer/raw/master/photos/SolRouterSer-3.jpg)
  
 ### Electronics
 The circuit board uses spring loaded test pins to connect to the router. There are LEDs on the serial connections, indicating when the data is being transferred. Unpopulated pads may be used to add pull-up resistors if so required by the USB-UART adapter or the router. 
 
 Email us to preorder the assembled PCB with pre-soldered test pins. 
 
-![SolRouterSer][https://raw.github.com/IRNAS/SolRouterSer/raw/master/photos/SolRouterSer-1.jpg]
+![SolRouterSer](https://raw.github.com/IRNAS/SolRouterSer/raw/master/photos/SolRouterSer-1.jpg)
 
 For connecting to the computer the use for an USB-UART converter is suggested, FTDI or CP2012 based ones perform very well and are available at low cost.
 
