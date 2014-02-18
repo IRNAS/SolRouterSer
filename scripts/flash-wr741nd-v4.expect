@@ -1,0 +1,35 @@
+#!/usr/bin/expect -f
+#
+# Configures and flashes TPLINK wr741nd v4
+#
+
+# TODO Find serial port device filename
+
+#set SERIAL_PORT_FILE /dev/tty.SLAB_USBtoUART
+
+# It configures the same IP addresses as Fonera+ has by default
+set TPLINK_ROUTER_IP 192.168.1.1
+set TPLINK_SERVER_IP 192.168.1.100
+
+set KERNEL_FILENAME [lindex $argv 0]
+set SERIAL_PORT_FILE [lindex $argv 1]
+
+send_user "Using kernel image: $KERNEL_FILENAME\n"
+
+spawn cu --parity=none -s 115200 --nostop -l $SERIAL_PORT_FILE
+set timeout 3600
+set send_slow { 1 .05 }
+expect "Autobooting in 1 seconds"
+send "tpl"
+expect "hornet>"
+send -s -- "tftpboot 0x80000000 $KERNEL_FILENAME \r"
+expect "hornet>"
+send -s -- "erase 0x9f020000 +0x3c0000\r"
+expect "hornet>"
+send -s -- "cp.b 0x80000000 0x9f020000 0x3c0000\r"
+expect "hornet>"
+send -s -- "bootm 0x9f020000\r"
+expect "Starting kernel ..."
+sleep 1
+
+
